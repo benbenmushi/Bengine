@@ -124,6 +124,7 @@ public class UISizeController
 	[SerializeField]
 	float                       size;
 	RectTransform               m_lastTarget;
+	int                         m_lastFrameSizeChangedEvent;
 
 	public event System.Action<float> SizeChanged;
 
@@ -139,7 +140,11 @@ public class UISizeController
 		if (SizeChanged != null && apply)
 		{
 			sizeReference.UpdateRefSize(m_lastTarget);
-			SizeChanged(GetSize());
+			if (m_lastFrameSizeChangedEvent != Time.frameCount)
+			{
+				m_lastFrameSizeChangedEvent = Time.frameCount;
+				SizeChanged(GetSize());
+			}
 		}
 	}
 

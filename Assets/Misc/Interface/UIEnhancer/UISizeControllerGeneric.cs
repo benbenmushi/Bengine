@@ -199,7 +199,8 @@ public class UISizeControllerGeneric : MonoBehaviourEx
 #if UNITY_EDITOR
 	void Update()
 	{
-		Refresh();
+		if (!Application.isPlaying)
+			Refresh();
 	}
 	GUIContent[] m_possibleFieldsContent;
 	public GUIContent[] possibleFieldsContent

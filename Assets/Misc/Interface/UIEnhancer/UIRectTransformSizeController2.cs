@@ -55,7 +55,8 @@ public class UIRectTransformSizeController2 : MonoBehaviour, ILayoutElement, ILa
 #if UNITY_EDITOR
 	void Update()
 	{
-		Refresh();
+		if (!Application.isPlaying)
+			Refresh();
 	}
 	[Button("Force size refresh")]
 	void ForceRefresh()
