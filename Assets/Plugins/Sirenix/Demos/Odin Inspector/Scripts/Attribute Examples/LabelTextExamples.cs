@@ -11,7 +11,7 @@
         [LabelText("2")]
         public int MyInt2;
 
-        [LabelText("3")]
+        [LabelText("toto")]
         public int MyInt3;
 
 		[InfoBox("Use $ to refer to a member string.")]

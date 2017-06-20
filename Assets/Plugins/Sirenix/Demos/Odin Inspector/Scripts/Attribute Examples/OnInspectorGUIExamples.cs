@@ -18,12 +18,22 @@
 
 #if UNITY_EDITOR
 
-        [OnInspectorGUI]
-        private void OnInspectorGUI()
-        {
-            UnityEditor.EditorGUILayout.HelpBox("On Inspector GUI can also be used on both methods and properties", UnityEditor.MessageType.Info);
-        }
+		[OnInspectorGUI]
+		private void OnInspectorGUI()
+		{
+			UnityEditor.EditorGUILayout.HelpBox("On Inspector GUI can also be used on both methods and properties", UnityEditor.MessageType.Info);
+		}
 
+        [LabelText("toto")]
+		public string str;
+		[OnInspectorGUI]
+		private void OnInspectorGUI2()
+		{
+			UnityEditor.EditorGUILayout.HelpBox("On Inspector GUI can also be used on both methods and properties", UnityEditor.MessageType.Info);
+		}
+        [LabelText("titi")]
+		public string str2;
 #endif
-    }
+
+	}
 }

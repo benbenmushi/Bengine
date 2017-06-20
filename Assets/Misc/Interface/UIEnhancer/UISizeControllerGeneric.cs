@@ -25,7 +25,9 @@ public class UISizeControllerGeneric : MonoBehaviourEx
 			if (m_target != value)
 			{
 				fieldTargetIndex = -1;
+#if UNITY_EDITOR
 				m_possibleFieldsContent = null;
+#endif
 				m_possibleFields = null;
 				m_target = value;
 			}
