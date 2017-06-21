@@ -10,11 +10,10 @@ using UnityEngine;
 
 public class FadeToCam : MonoBehaviour
 {
-
 	public bool     enableAtStart = false;
 	[Range(0, 1)]
 	public float intensity = 1;
-	[ValidateInput("IsSolidColor", "Camera must be solid color")]
+	[ValidateInput("IsSolidColorOrSkyBox", "Camera clearFlags must be SolidColor or Skybox", InfoMessageType.Warning)]
 	public Camera targetCamera;
 	private RenderTexture cachedTexture;
 	private Camera refCam;
@@ -23,9 +22,9 @@ public class FadeToCam : MonoBehaviour
 	private Shader shader;
 	private Material material = null;
 
-	bool IsSolidColor(Camera cam)
+	bool IsSolidColorOrSkyBox(Camera cam)
 	{
-		return (cam.clearFlags == CameraClearFlags.SolidColor);
+		return cam.clearFlags == CameraClearFlags.SolidColor || cam.clearFlags == CameraClearFlags.Skybox;
 	}
 
 	void Awake()
