@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class ButtonBucket : MonoBehaviourEx
@@ -61,6 +63,7 @@ public class ButtonBucket : MonoBehaviourEx
 			targets[i].localPosition = Vector3.LerpUnclamped(closedInfoTab[i].localPosition, opennedInfoTab[i].localPosition, openCurve.Evaluate(a));
 	}
 
+#if UNITY_EDITOR
 	[DisableInPlayMode, Button, ButtonGroup("editormodeButtons")]
 	void SaveOpenPositions()
 	{
@@ -73,6 +76,7 @@ public class ButtonBucket : MonoBehaviourEx
 		Undo.RegisterCompleteObjectUndo(this.gameObject, "SaveClosedPositions");
 		closedInfoTab = GetChildrenInfoTab();
 	}
+#endif
 
 	FrameInfo[] GetChildrenInfoTab()
 	{

@@ -29,10 +29,10 @@ public class OpenCloseAnim : MonoBehaviourEx
 		closeState.AddTransition(openState);
 		AnimatorController.SetAnimatorController(GetComponent<Animator>(), controller);
 	}
-#endif
 
 	[SerializeField, HideInInspector]
 	AnimatorController currentController;
+#endif
 
 	bool AnimatorHasController
 	{

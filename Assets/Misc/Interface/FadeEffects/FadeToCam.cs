@@ -1,9 +1,9 @@
-﻿#if UNITY_EDITOR
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
+#if UNITY_EDITOR
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities.Editor;
-using System;
 #endif
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
