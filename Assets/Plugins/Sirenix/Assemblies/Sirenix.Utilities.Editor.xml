@@ -1425,6 +1425,16 @@
             This class is due to undergo refactoring.
             </summary>
         </member>
+        <member name="F:Sirenix.Utilities.Editor.DragHandle.SourceWindow">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
+        <member name="P:Sirenix.Utilities.Editor.DragHandle.IsCrossWindowDrag">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
         <member name="P:Sirenix.Utilities.Editor.DragHandle.Rect">
             <summary>
             Not yet documented.
@@ -1525,6 +1535,11 @@
             Not yet documented.
             </summary>
         </member>
+        <member name="F:Sirenix.Utilities.Editor.DropZoneHandle.SourceWindow">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
         <member name="P:Sirenix.Utilities.Editor.DropZoneHandle.Rect">
             <summary>
             Not yet documented.
@@ -1541,6 +1556,11 @@
             </summary>
         </member>
         <member name="P:Sirenix.Utilities.Editor.DropZoneHandle.CanAcceptMove">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
+        <member name="P:Sirenix.Utilities.Editor.DropZoneHandle.IsCrossWindowDrag">
             <summary>
             Not yet documented.
             </summary>
@@ -2065,6 +2085,37 @@
             Pops editor gui label widths pushed by <see cref="M:Sirenix.Utilities.Editor.GUIHelper.PushLabelWidth(System.Single)"/>.
             </summary>
         </member>
+        <member name="M:Sirenix.Utilities.Editor.GUIHelper.PushResponsiveVectorComponentFields(System.Boolean)">
+            <summary>
+            Pushes the value to the responsive vector component fields stack. Remeber to pop with <see cref="M:Sirenix.Utilities.Editor.GUIHelper.PopResponsiveVectorComponentFields"/>.
+            </summary>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.GUIHelper.PopResponsiveVectorComponentFields">
+            <summary>
+            Pops responsive vector component fields value pushed by <see cref="M:Sirenix.Utilities.Editor.GUIHelper.PushResponsiveVectorComponentFields(System.Boolean)"/>.
+            </summary>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.GUIHelper.PushFadeGroupDuration(System.Single)">
+            <summary>
+            Pushes the value to the fade group duration stack. Remeber to pop with <see cref="M:Sirenix.Utilities.Editor.GUIHelper.PopFadeGroupDuration"/>.
+            </summary>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.GUIHelper.PopFadeGroupDuration">
+            <summary>
+            Pops fade group duration value pushed by <see cref="M:Sirenix.Utilities.Editor.GUIHelper.PushFadeGroupDuration(System.Single)"/>.
+            </summary>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.GUIHelper.PushTabPageSlideAnimationDuration(System.Single)">
+            <summary>
+            Pushes the value to the tab page slide animation duration stack. Remember to pop with <see cref="M:Sirenix.Utilities.Editor.GUIHelper.PopTabPageSlideAnimationDuration"/>.
+            </summary>
+            <param name="duration"></param>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.GUIHelper.PopTabPageSlideAnimationDuration">
+            <summary>
+            Pops tab page slide animation duration value pushed by <see cref="M:Sirenix.Utilities.Editor.GUIHelper.PushTabPageSlideAnimationDuration(System.Single)"/>.
+            </summary>
+        </member>
         <member name="M:Sirenix.Utilities.Editor.GUIHelper.ClearRepaintRequest">
             <summary>
             Clears the repaint request.
@@ -2246,6 +2297,64 @@
             <summary>
             Field drawing functions for various types.
             </summary>
+        </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixEditorFields.ResponsiveVectorComponentFields">
+            <summary>
+            When <c>true</c> the component labels, for vector fields, will be hidden when the field is too narrow.
+            </summary>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LayerMaskField(UnityEngine.GUIContent,UnityEngine.LayerMask)">
+            <summary>
+            Draws a field for a layer mask.
+            </summary>
+            <param name="label">The label to use, or null if no label should be used.</param>
+            <param name="layerMask">The layer mask to draw.</param>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.GuidField(UnityEngine.Rect,UnityEngine.GUIContent,System.Guid)">
+            <summary>
+            Draws a Guid field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.GuidField(UnityEngine.GUIContent,System.Guid)">
+            <summary>
+            Draws a Guid field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.GuidField(UnityEngine.GUIContent,System.Guid,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a Guid field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.GuidField(UnityEngine.GUIContent,System.Guid,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a Guid field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.GuidField(UnityEngine.Rect,UnityEngine.GUIContent,System.Guid,UnityEngine.GUIStyle)">
+            <summary>
+            Draws a Guid field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <returns>Value assigned to the field.</returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.IntField(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,UnityEngine.GUIStyle)">
             <summary>
@@ -2479,6 +2588,150 @@
             <param name="options">Layout options.</param>
             <returns>Value assigned to the field.</returns>
         </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(UnityEngine.Rect,UnityEngine.GUIContent,System.Int64,UnityEngine.GUIStyle)">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(UnityEngine.Rect,UnityEngine.GUIContent,System.Int64)">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(UnityEngine.Rect,System.String,System.Int64)">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(UnityEngine.Rect,System.Int64)">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(UnityEngine.GUIContent,System.Int64,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(UnityEngine.GUIContent,System.Int64,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(System.String,System.Int64,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.LongField(System.Int64,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws an long field.
+            </summary>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(UnityEngine.Rect,UnityEngine.GUIContent,System.Int64,UnityEngine.GUIStyle)">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(UnityEngine.Rect,UnityEngine.GUIContent,System.Int64)">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(UnityEngine.Rect,System.String,System.Int64)">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(UnityEngine.Rect,System.Int64)">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(UnityEngine.GUIContent,System.Int64,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(UnityEngine.GUIContent,System.Int64,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(System.String,System.Int64,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedLongField(System.Int64,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed long field.
+            </summary>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.FloatField(UnityEngine.Rect,UnityEngine.GUIContent,System.Single,UnityEngine.GUIStyle)">
             <summary>
             Draws a float field.
@@ -2708,6 +2961,222 @@
             <param name="value">Current value.</param>
             <param name="min">Minimum value.</param>
             <param name="max">Maximum value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(UnityEngine.Rect,UnityEngine.GUIContent,System.Double,UnityEngine.GUIStyle)">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(UnityEngine.Rect,UnityEngine.GUIContent,System.Double)">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(UnityEngine.Rect,System.String,System.Double)">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(UnityEngine.Rect,System.Double)">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(UnityEngine.GUIContent,System.Double,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(UnityEngine.GUIContent,System.Double,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(System.String,System.Double,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DoubleField(System.Double,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a double field.
+            </summary>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(UnityEngine.Rect,UnityEngine.GUIContent,System.Double,UnityEngine.GUIStyle)">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(UnityEngine.Rect,UnityEngine.GUIContent,System.Double)">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(UnityEngine.Rect,System.String,System.Double)">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(UnityEngine.Rect,System.Double)">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(UnityEngine.GUIContent,System.Double,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(UnityEngine.GUIContent,System.Double,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(System.String,System.Double,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DelayedDoubleField(System.Double,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a delayed double field.
+            </summary>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(UnityEngine.Rect,UnityEngine.GUIContent,System.Decimal,UnityEngine.GUIStyle)">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(UnityEngine.Rect,UnityEngine.GUIContent,System.Decimal)">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(UnityEngine.Rect,System.String,System.Decimal)">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(UnityEngine.Rect,System.Decimal)">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="value">Current value.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(UnityEngine.GUIContent,System.Decimal,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="style">GUIStyle for drawing the field. Set to <c>null</c> for default.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(UnityEngine.GUIContent,System.Decimal,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(System.String,System.Decimal,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.DecimalField(System.Decimal,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a decimal field.
+            </summary>
+            <param name="value">Current value.</param>
             <param name="options">Layout options.</param>
             <returns>Value assigned to the field.</returns>
         </member>
@@ -3042,6 +3511,58 @@
             Draws a Vector4 field.
             </summary>
             <param name="value">Current value.</param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.ColorField(UnityEngine.Rect,UnityEngine.GUIContent,UnityEngine.Color)">
+            <summary>
+            Draws a Color field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value"></param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.ColorField(UnityEngine.Rect,System.String,UnityEngine.Color)">
+            <summary>
+            Draws a Color field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value"></param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.ColorField(UnityEngine.Rect,UnityEngine.Color)">
+            <summary>
+            Draws a Color field.
+            </summary>
+            <param name="rect">Position and size of field.</param>
+            <param name="value"></param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.ColorField(UnityEngine.GUIContent,UnityEngine.Color,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a Color field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value"></param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.ColorField(System.String,UnityEngine.Color,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a Color field.
+            </summary>
+            <param name="label">Label of field. Set to <c>null</c> for no label.</param>
+            <param name="value"></param>
+            <param name="options">Layout options.</param>
+            <returns>Value assigned to the field.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.ColorField(UnityEngine.Color,UnityEngine.GUILayoutOption[])">
+            <summary>
+            Draws a Color field.
+            </summary>
+            <param name="value"></param>
             <param name="options">Layout options.</param>
             <returns>Value assigned to the field.</returns>
         </member>
@@ -3980,6 +4501,26 @@
             Collection of various editor GUI functions.
             </summary>
         </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixEditorGUI.DefaultFadeGroupDuration">
+            <summary>
+            Default fade group animation duration.
+            </summary>
+        </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixEditorGUI.TabPageSlideAnimationDuration">
+            <summary>
+            Tab page slide animation duration.
+            </summary>
+        </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixEditorGUI.ShakingAnimationDuration">
+            <summary>
+            Shaking animation duration.
+            </summary>
+        </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixEditorGUI.ExpandFoldoutByDefault">
+            <summary>
+            Expand foldouts by default.
+            </summary>
+        </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.ObjectField(UnityEngine.Rect,UnityEngine.GUIContent,UnityEngine.Object,System.Type,System.Boolean,System.Boolean)">
             <summary>
             Draws an GUI field for objects.
@@ -4004,6 +4545,11 @@
             <returns>
             The object assigned to the field.
             </returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.Title(System.String,System.String,UnityEngine.TextAlignment,System.Boolean,System.Boolean)">
+            <summary>
+            Draws a nicely formatted title with an optinal sub-title and horizontal ruler.
+            </summary>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.ObjectField``1(System.Object,UnityEngine.GUIContent,``0,System.Boolean)">
             <summary>
@@ -4095,28 +4641,28 @@
             <param name="wide">If set to <c>true</c> the message box will be wide.</param>
             <returns>State of isFolded.</returns>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.HorizontalLineSeperator(System.Int32)">
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.HorizontalLineSeparator(System.Int32)">
             <summary>
-            Draws a horizontal line seperator.
+            Draws a horizontal line separator.
             </summary>
             <param name="lineWidth">Width of the line.</param>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.HorizontalLineSeperator(UnityEngine.Color,System.Int32)">
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.HorizontalLineSeparator(UnityEngine.Color,System.Int32)">
             <summary>
-            Draws a horizontal line seperator.
+            Draws a horizontal line separator.
             </summary>
             <param name="color">The color of the line.</param>
             <param name="lineWidth">The size of the line.</param>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.VerticalLineSeperator(System.Int32)">
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.VerticalLineSeparator(System.Int32)">
             <summary>
-            Draws a vertical line seperator.
+            Draws a vertical line separator.
             </summary>
             <param name="lineWidth">Width of the line.</param>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.VerticalLineSeperator(UnityEngine.Color,System.Int32)">
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.VerticalLineSeparator(UnityEngine.Color,System.Int32)">
             <summary>
-            Draws a vertical line seperator.
+            Draws a vertical line separator.
             </summary>
             <param name="color">The color of the line.</param>
             <param name="lineWidth">Width of the line.</param>
@@ -4478,6 +5024,37 @@
             <param name="icon">The texture icon for the button.</param>
             <returns>The current state of the button.</returns>
         </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.Boolean)">
+            <summary>
+            Begins a fade group. Remember to end with <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndFadeGroup"/>.
+            </summary>
+            <param name="key">The key for the fade group.</param>
+            <param name="isVisible">Current state of the fade group.</param>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.Boolean,System.Single@)">
+            <summary>
+            Begins a fade group. Remember to end with <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndFadeGroup" />.
+            </summary>
+            <param name="key">The key for the fade group.</param>
+            <param name="isVisible">Current state of the fade group.</param>
+            <param name="t">A value between 0 and 1 indicating how expanded the fade group is.</param>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.Object,System.Boolean)">
+            <summary>
+            Begins a fade group. Remember to end with <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndFadeGroup"/>.
+            </summary>
+            <param name="primaryKey">The primary key for the fade group.</param>
+            <param name="secondaryKey">The secondly key for the fade group.</param>
+            <param name="isVisible">Current state of the fade group.</param>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.String,System.Boolean)">
+            <summary>
+            Begins a fade group. Remember to end with <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndFadeGroup"/>.
+            </summary>
+            <param name="key">The key for the fade group.</param>
+            <param name="name">The name of the fade group.</param>
+            <param name="isVisible">Current state of the fade group.</param>
+        </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.Boolean,System.Single)">
             <summary>
             Begins a fade group. Remember to end with <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndFadeGroup"/>.
@@ -4485,7 +5062,6 @@
             <param name="key">The key for the fade group.</param>
             <param name="isVisible">Current state of the fade group.</param>
             <param name="duration">The duration of fade in and out.</param>
-            <returns>The current state of the fade group.</returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.Boolean,System.Single@,System.Single)">
             <summary>
@@ -4495,9 +5071,6 @@
             <param name="isVisible">Current state of the fade group.</param>
             <param name="t">A value between 0 and 1 indicating how expanded the fade group is.</param>
             <param name="duration">The duration of fade in and out.</param>
-            <returns>
-            The current state of the fade group.
-            </returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.Object,System.Boolean,System.Single)">
             <summary>
@@ -4507,7 +5080,6 @@
             <param name="secondaryKey">The secondly key for the fade group.</param>
             <param name="isVisible">Current state of the fade group.</param>
             <param name="duration">The duration of fade in and out.</param>
-            <returns>The current state of the fade group.</returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Object,System.String,System.Boolean,System.Single)">
             <summary>
@@ -4517,14 +5089,12 @@
             <param name="name">The name of the fade group.</param>
             <param name="isVisible">Current state of the fade group.</param>
             <param name="duration">The duration of fade in and out.</param>
-            <returns>The current state of the fade group.</returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginFadeGroup(System.Single)">
             <summary>
             Begins a fade group. Remember to end with <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndFadeGroup"/>.
             </summary>
             <param name="t">The current fading value between 0 and 1.</param>
-            <returns></returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndFadeGroup">
             <summary>
@@ -4617,6 +5187,11 @@
             Ends drawing a box header started by <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginBoxHeader"/>,
             </summary>
         </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.StartShakingGroup(System.Object)">
+            <summary>
+            Starts the shaking animation of a shaking group.
+            </summary>
+        </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.StartShakingGroup(System.Object,System.Single)">
             <summary>
             Starts the shaking animation of a shaking group.
@@ -4702,6 +5277,16 @@
             </summary>
             <param name="key">The key for the tab group..</param>
             <returns>An animated tab group.</returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginToggleGroup(System.Object,System.Boolean@,System.Boolean@,System.String)">
+            <summary>
+            Begins drawing a toggle group. Remember to end with <see cref="M:Sirenix.Utilities.Editor.SirenixEditorGUI.EndToggleGroup"/>.
+            </summary>
+            <param name="key">The key of the group.</param>
+            <param name="enabled">Value indicating if the group is enabled.</param>
+            <param name="visible">Value indicating if the group is visible.</param>
+            <param name="title">The title of the group.</param>
+            <returns>Value indicating if the group is toggled.</returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.BeginToggleGroup(System.Object,System.Boolean@,System.Boolean@,System.String,System.Single)">
             <summary>
@@ -4789,6 +5374,17 @@
             <returns><c>true</c> when the selection has changed. Otherwise <c>false</c>.</returns>
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.SlideRect(UnityEngine.Rect,System.Int32,System.Single)">
+            <summary>
+            Creates a rect that can be grabbed and pulled to change a value up or down.
+            </summary>
+            <param name="rect">The grabbable rect.</param>
+            <param name="id">The control ID for the sliding.</param>
+            <param name="t">The current value.</param>
+            <returns>
+            The current value.
+            </returns>
+        </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorGUI.SlideRect(UnityEngine.Rect,System.Int32,System.Double)">
             <summary>
             Creates a rect that can be grabbed and pulled to change a value up or down.
             </summary>
@@ -4934,6 +5530,21 @@
         <member name="F:Sirenix.Utilities.Editor.SirenixGUIStyles.MenuButtonHoverColor">
             <summary>
             Menu button hover color.
+            </summary>
+        </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixGUIStyles.LightBorderColor">
+            <summary>
+            A light border color.
+            </summary>
+        </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixGUIStyles.BoxBackgroundColorTintEven">
+            <summary>
+            The box background tint color.
+            </summary>
+        </member>
+        <member name="F:Sirenix.Utilities.Editor.SirenixGUIStyles.BoxBackgroundColorTintOdd">
+            <summary>
+            The box background tint color.
             </summary>
         </member>
         <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.BoldLabel">
@@ -5179,6 +5790,11 @@
         <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.MessageBox">
             <summary>
             Message box style.
+            </summary>
+        </member>
+        <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.MultiLineLabel">
+            <summary>
+            Multiline Label
             </summary>
         </member>
         <member name="T:Sirenix.Utilities.Editor.GUITabPage">

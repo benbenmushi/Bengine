@@ -6,11 +6,13 @@
     public class DictionaryExamples : SerializedMonoBehaviour
     {
         [InfoBox("In order to serialize dictionaries, all we need to do is to inherit our class from SerializedMonoBehaviour.")]
-        public Dictionary<string, MyCustomType> StringObjectLookup;
-
-        public Dictionary<string, List<int>> StringListDictionary;
-
         public Dictionary<int, Material> IntMaterialLookup;
+
+        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
+        public Dictionary<MyEnum, MyCustomType> EnumObjectLookup;
+
+        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.ExpandedFoldout)]
+        public Dictionary<string, List<int>> StringListDictionary;
 
         public Dictionary<string, string> StringStringDictionary;
 

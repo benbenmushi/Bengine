@@ -13,13 +13,13 @@
         [AssetList]
         public List<PlaceableObject> PlaceableObjects;
 
-        [FoldoutGroup("Filtered AssetLists examples", 100)]
-        [AssetList(Path = "/Plugins/Sirenix/")]
+        [FoldoutGroup("Filtered AssetLists examples", expanded: false, order: 100)]
+        [AssetList(Path = "Plugins/Sirenix/")]
         [InlineEditor(InlineEditorModes.LargePreview)]
         public UnityEngine.Object Object;
 
         [AssetList(AutoPopulate = true)]
-        [FoldoutGroup("Filtered AssetLists examples", 100)]
+        [FoldoutGroup("Filtered AssetLists examples")]
         public List<PlaceableObject> PlaceableObjectsAutoPopulated;
 
         [AssetList(LayerNames = "MyLayerName")]
@@ -34,7 +34,7 @@
         [FoldoutGroup("Filtered AssetLists examples")]
         public List<GameObject> AllPrefabsLocatedInFolder;
 
-        [AssetList(Tags = "MyTagA, MyTabB", Path = "/Assets/Plugins/Sirenix/")]
+        [AssetList(Tags = "MyTagA, MyTabB", Path = "/Plugins/Sirenix/")]
         [FoldoutGroup("Filtered AssetLists examples")]
         public List<GameObject> GameObjectsWithTag;
 

@@ -161,11 +161,6 @@
              <seealso cref="T:Sirenix.OdinInspector.TabGroupAttribute"/>
              <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
         </member>
-        <member name="P:Sirenix.OdinInspector.BoxGroupAttribute.Label">
-            <summary>
-            Header label for the group.
-            </summary>
-        </member>
         <member name="P:Sirenix.OdinInspector.BoxGroupAttribute.ShowLabel">
             <summary>
             If <c>true</c> a label for the group will be drawn on top.
@@ -239,80 +234,101 @@
             }
             </code>
             </example>
+            <seealso cref="T:Sirenix.OdinInspector.InlineButtonAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.ButtonGroupAttribute"/>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ButtonAttribute.ButtonHeight">
+            <summary>
+            Gets the height of the button. If it's zero or below then use default.
+            </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.ButtonAttribute.Name">
             <summary>
             Use this to override the label on the button.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor">
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(Sirenix.OdinInspector.ButtonSizes)">
             <summary>
             Creates a button in the inspector named after the method.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String)">
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.Int32)">
+            <summary>
+            Creates a button in the inspector named after the method.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String,Sirenix.OdinInspector.ButtonSizes)">
             <summary>
             Creates a button in the inspector with a custom name.
             </summary>
             <param name="name">Custom name for the button.</param>
+            <param name="buttonSize">Size of the button.</param>
+        </member>
+        <member name="M:Sirenix.OdinInspector.ButtonAttribute.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates a button in the inspector with a custom name.
+            </summary>
+            <param name="name">Custom name for the button.</param>
+            <param name="buttonSize">Size of the button in pixels.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.ButtonGroupAttribute">
-            <summary>
-            <para>ButtonGroup is used on any instance function, and adds buttons to the inspector organized into horizontal groups.</para>
-            <para>Use this to organize multiple button in a tiddy horizontal group.</para>
-            </summary>
-            <example>
-            <para>The following example shows how ButtonGroup is used to organize two buttons into one group.</para>
-            <code>
-            public class MyComponent : MonoBehaviour
-            {
-            	[ButtonGroup("MyGroup")]
-            	private void A()
+             <summary>
+             <para>ButtonGroup is used on any instance function, and adds buttons to the inspector organized into horizontal groups.</para>
+             <para>Use this to organize multiple button in a tiddy horizontal group.</para>
+             </summary>
+             <example>
+             <para>The following example shows how ButtonGroup is used to organize two buttons into one group.</para>
+             <code>
+            	public class MyComponent : MonoBehaviour
             	{
-            		// ..
-            	}
+            		[ButtonGroup("MyGroup")]
+            		private void A()
+            		{
+            			// ..
+            		}
             
-            	[ButtonGroup("MyGroup")]
-            	private void B()
+            		[ButtonGroup("MyGroup")]
+            		private void B()
+            		{
+            			// ..
+            		}
+            	}
+             </code>
+             </example>
+             <example>
+             <para>The following example shows how ButtonGroup can be used to create multiple groups of buttons.</para>
+             <code>
+            	public class MyComponent : MonoBehaviour
             	{
-            		// ..
+            		[ButtonGroup("First")]
+            		private void A()
+            		{ }
+            
+            		[ButtonGroup("First")]
+            		private void B()
+            		{ }
+            
+            		[ButtonGroup("")]
+            		private void One()
+            		{ }
+            
+            		[ButtonGroup("")]
+            		private void Two()
+            		{ }
+            
+            		[ButtonGroup("")]
+            		private void Three()
+            		{ }
             	}
-            }
-            </code>
-            </example>
-            <example>
-            <para>The following example shows how ButtonGroup can be used to create multiple groups of buttons.</para>
-            <code>
-            public class MyComponent : MonoBehaviour
-            {
-            	[ButtonGroup("First")]
-            	private void A()
-            	{ }
-            
-            	[ButtonGroup("First")]
-            	private void B()
-            	{ } 
-            
-            	[ButtonGroup("")]
-            	private void One()
-            	{ }
-            
-            	[ButtonGroup("")]
-            	private void Two()
-            	{ }
-            
-            	[ButtonGroup("")]
-            	private void Three()
-            	{ }
-            }
-            </code>
-            </example>
-            <seealso cref="T:Sirenix.OdinInspector.ButtonAttribute"/>
-            <seealso cref="T:Sirenix.OdinInspector.BoxGroupAttribute"/>
-            <seealso cref="T:Sirenix.OdinInspector.FoldoutGroupAttribute"/>
-            <seealso cref="T:Sirenix.OdinInspector.HorizontalGroupAttribute"/>
-            <seealso cref="T:Sirenix.OdinInspector.TabGroupAttribute"/>
-            <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
+             </code>
+             </example>
+             <seealso cref="T:Sirenix.OdinInspector.ButtonAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.InlineButtonAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.BoxGroupAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.FoldoutGroupAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.HorizontalGroupAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.TabGroupAttribute"/>
+             <seealso cref="T:Sirenix.OdinInspector.ToggleGroupAttribute"/>
         </member>
         <member name="M:Sirenix.OdinInspector.ButtonGroupAttribute.#ctor(System.String,System.Int32)">
             <summary>
@@ -320,6 +336,101 @@
             </summary>
             <param name="group">The group to organize the button into.</param>
             <param name="order">The order of the group in the inspector..</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.TitleAlignments">
+            <summary>
+            Title alignment enum used by various attributes.
+            </summary>
+            <seealso cref="T:Sirenix.OdinInspector.TitleGroupAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.TitleAttribute"/>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAlignments.Left">
+            <summary>
+            Title and subtitle left aligned.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAlignments.Centered">
+            <summary>
+            Title and subtitle centered aligned.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAlignments.Right">
+            <summary>
+            Title and subtitle right aligned.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TitleAlignments.Split">
+            <summary>
+            Title on the left, subtitle on the right.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.TitleGroupAttribute">
+            <summary>
+            Groups properties vertically together with a title, an optional subtitle, and an optional horizontal line. 
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.Subtitle">
+            <summary>
+            Optional subtitle.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.Alignment">
+            <summary>
+            Title alignment.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.HorizontalLine">
+            <summary>
+            Gets a value indicating whether or not to draw a horizontal line below the title.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.BoldTitle">
+            <summary>
+            If <c>true</c> the title will be dispalyed with a bold font.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TitleGroupAttribute.Indent">
+            <summary>
+            Gets a value indicating whether or not to indent all group members.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.TitleGroupAttribute.#ctor(System.String,System.String,Sirenix.OdinInspector.TitleAlignments,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Groups properties vertically together with a title, an optional subtitle, and an optional horizontal line. 
+            </summary>
+            <param name="title">The title-</param>
+            <param name="subtitle">Optional subtitle.</param>
+            <param name="alignment">The text alignment.</param>
+            <param name="horizontalLine">Horizontal line.</param>
+            <param name="boldTitle">Bold text.</param>
+            <param name="indent">Whether or not to indent all group members.</param>
+            <param name="order">The group order.</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.ButtonSizes">
+            <summary>
+            Various built-in button sizes.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonSizes.Small">
+            <summary>
+            Small button size, fits well with properties in the inspector.
+            </summary>
+            
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonSizes.Medium">
+            <summary>
+            A larger button.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonSizes.Large">
+            <summary>
+            A very large button. 
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.ButtonSizes.Gigantic">
+            <summary>
+            A bigantic button. Twise as big as Large 
+            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.ColorPaletteAttribute">
             <summary>
@@ -460,6 +571,43 @@
             <param name="details">The hideable details of the message box.</param>
             <param name="infoMessageType">Type of the message box.</param>
             <param name="visibleIf">Optional name of a member to hide or show the message box.</param>
+        </member>
+        <member name="T:Sirenix.OdinInspector.DictionaryDisplayOptions">
+            <summary>
+            Various display modes for the dictionary to draw its items.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDisplayOptions.OneLine">
+            <summary>
+            Draws all dictionary items in two two columns. The left column contains all key values, the right column displays all values.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDisplayOptions.Foldout">
+            <summary>
+            Draws each dictionary item in a box with they key in the header and the value inside the box. 
+            Whether or not the box is expanded or collapsed by default, is determined by the 
+            "Expand Foldout By Default" setting found in the preferences window "Window > Odin Inspector > Preferences > Drawers > Settings".
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDisplayOptions.CollapsedFoldout">
+            <summary>
+            Draws each dictionary item in a collapsed foldout with they key in the header and the value inside the box.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDisplayOptions.ExpandedFoldout">
+            <summary>
+            Draws each dictionary item in an expanded foldout with they key in the header and the value inside the box.
+            </summary>
+        </member>
+        <member name="T:Sirenix.OdinInspector.DictionaryDrawerSettings">
+            <summary>
+            Customize the behavior for dictionaries in the inspector.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.DictionaryDrawerSettings.DisplayMode">
+            <summary>
+            Specify how the dictionary should draw its items.
+            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.DisableContextMenuAttribute">
             <summary>
@@ -634,6 +782,53 @@
             <remarks>
             <para>Note that this attribute does not mean "disable Odin completely for this property"; it is visual only in nature, and in fact represents an Odin drawer which calls into Unity's old property drawing system. As Odin is still ultimately responsible for arranging the drawing of the property, and since other attributes exist with a higher priority than this attribute, and it is not guaranteed that Unity will draw the property if another attribute is present to override this one.</para>
             </remarks>
+        </member>
+        <member name="T:Sirenix.OdinInspector.InlineButtonAttribute">
+            <summary>
+            <para>The inline button adds a button to the end of a property.</para>
+            <para></para>
+            </summary>
+            <remarks>
+            <note type="note">Due to a bug, multiple inline buttons are currently not supported.</note>
+            </remarks>
+            <example>
+            <para>The following examples demonstrates how InlineButton can be used.</para>
+            <code>
+            public class MyComponent : MonoBehaviour
+            {
+            	// Adds a button to the end of the A property.
+            	[InlineButton("MyFunction")]
+            	public int A;
+            	
+            	// This is example demonstrates how you can change the label of the button.
+            	// InlineButton also supports refering to string members with $.
+            	[InlineButton("MyFunction", "Button")]
+            	public int B;
+            	
+            	private void MyFunction()
+            	{
+            		// ...
+            	}
+            }
+            </code>
+            </example>
+            <seealso cref="T:Sirenix.OdinInspector.ButtonAttribute"/>
+            <seealso cref="T:Sirenix.OdinInspector.ButtonGroupAttribute"/>
+        </member>
+        <member name="T:Sirenix.OdinInspector.Internal.ISubGroupProviderAttribute">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.Internal.ISubGroupProviderAttribute.GetSubGroupAttributes">
+            <summary>
+            Not yet documented.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.Internal.ISubGroupProviderAttribute.RepathMemberAttribute(Sirenix.OdinInspector.PropertyGroupAttribute)">
+            <summary>
+            Not yet documented.
+            </summary>
         </member>
         <member name="T:Sirenix.OdinInspector.ShowForPrefabOnlyAttribute">
             <summary>
@@ -984,7 +1179,7 @@
             Gets the margin right.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.String,System.Single,System.Int32,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.String,System.Single,System.Int32,System.Int32,System.Int32)">
             <summary>
             Organizes the property in a horizontal group.
             </summary>
@@ -992,14 +1187,16 @@
             <param name="width">The width of the property. Values between 0 and 1 are interpolated as a percentage, otherwise pixels.</param>
             <param name="marginLeft">The left margin in pixels.</param>
             <param name="marginRight">The right margin in pixels.</param>
+            <param name="order">The order of the group in the inspector.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.Single,System.Int32,System.Int32)">
+        <member name="M:Sirenix.OdinInspector.HorizontalGroupAttribute.#ctor(System.Single,System.Int32,System.Int32,System.Int32)">
             <summary>
             Organizes the property in a horizontal group.
             </summary>
             <param name="width">The width of the property. Values between 0 and 1 are interpolated as a percentage, otherwise pixels.</param>
             <param name="marginLeft">The left margin in pixels.</param>
             <param name="marginRight">The right margin in pixels.</param>
+            <param name="order">The order of the group in the inspector.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.InlineEditorAttribute">
              <summary>
@@ -1523,6 +1720,23 @@
             <summary>
             Customize the behavior for lists and arrays in the inspector.
             </summary>
+            <example>
+            <para>This example shows how you can add your own custom add button to a list.</para>
+            <code>
+            [ListDrawerSettings(ShowAddButton = false, OnTitleBarGUI = "DrawTitleBarGUI")]
+            public List&lt;MyType&gt; SomeList;
+            
+            #if UNITY_EDITOR
+            private void DrawTitleBarGUI()
+            {
+                if (SirenixEditorGUI.ToolbarButton(EditorIcons.Plus))
+                {
+                    this.SomeList.Add(new MyType());
+                }
+            }
+            #end if
+            </code>
+            </example>
             <remarks>
             This attribute is scheduled for refactoring.
             </remarks>
@@ -1557,6 +1771,14 @@
             <summary>
             Use this to inject custom GUI into the title-bar of the list.
             </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.HideAddButton">
+            <summary>
+            If true, the add button will not be rendered in the title toolbar. You can use OnTitleBarGUI to implement your own add button.
+            </summary>
+            <value>
+              <c>true</c> if [hide add button]; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ShowIndexLabels">
             <summary>
@@ -1954,6 +2176,11 @@
         <member name="P:Sirenix.OdinInspector.PropertyGroupAttribute.GroupID">
             <summary>
             The ID used to grouping properties together.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.PropertyGroupAttribute.GroupName">
+            <summary>
+            The name of the group. This is the last part of the group ID if there is a path, otherwise it is just the group ID.
             </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.PropertyGroupAttribute.Order">
@@ -2386,6 +2613,7 @@
         <member name="M:Sirenix.OdinInspector.TabGroupAttribute.#ctor(System.String,System.Boolean,System.Int32)">
             <summary>
             Organizes the property into the specified tab in the default group.
+            Default group name is '_DefaultTabGroup'
             </summary>
             <param name="tab">The tab.</param>
             <param name="useFixedHeight">if set to <c>true</c> [use fixed height].</param>
@@ -2440,9 +2668,24 @@
             The title displayed above the property in the inspector.
             </summary>
         </member>
+        <member name="P:Sirenix.OdinInspector.TitleAttribute.Subtitle">
+            <summary>
+            Optional subtitle.
+            </summary>
+        </member>
         <member name="P:Sirenix.OdinInspector.TitleAttribute.Bold">
             <summary>
             If <c>true</c> the title will be dispalyed with a bold font.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TitleAttribute.HorizontalLine">
+            <summary>
+            Gets a value indicating whether or not to draw a horizontal line below the title.
+            </summary>
+        </member>
+        <member name="P:Sirenix.OdinInspector.TitleAttribute.TitleAlignment">
+            <summary>
+            Title alignment.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.TitleAttribute.#ctor(System.String,System.String,Sirenix.OdinInspector.TitleAlignments,System.Boolean,System.Boolean)">
@@ -2450,6 +2693,9 @@
             Creates a title above any property in the inspector.
             </summary>
             <param name="title">The title displayed above the property in the inspector.</param>
+            <param name="subtitle">Optional subtitle</param>
+            <param name="titleAlignment">Title alignment</param>
+            <param name="horizontalLine">Horizontal line</param>
             <param name="bold">If <c>true</c> the title will be drawn with a bold font.</param>
         </member>
         <member name="T:Sirenix.OdinInspector.ToggleAttribute">

@@ -4493,7 +4493,7 @@
         </member>
         <member name="P:Sirenix.Serialization.SerializationConfig.SerializationPolicy">
             <summary>
-            Gets or sets the serialization policy. This value is never null; if set to null, it will default to <see cref="P:Sirenix.Serialization.SerializationPolicies.Strict"/>.
+            Gets or sets the serialization policy. This value is never null; if set to null, it will default to <see cref="P:Sirenix.Serialization.SerializationPolicies.Unity"/>.
             </summary>
             <value>
             The serialization policy.
@@ -6013,7 +6013,7 @@
             Not yet documented.
             </summary>
         </member>
-        <member name="M:Sirenix.Serialization.InspectorSerializationUtility.GetDictionaryKeyValue(System.String)">
+        <member name="M:Sirenix.Serialization.InspectorSerializationUtility.GetDictionaryKeyValue(System.String,System.Type)">
             <summary>
             Not yet documented.
             </summary>

@@ -4,77 +4,60 @@
 
     public class ButtonAndButtonGroupExamples : MonoBehaviour
     {
-		[Title("Buttons and Button Groups")]
-        public bool ToggleButtons;
+        public string DynamicLabel = "Dynamic label";
 
-        [Button]
-        [GUIColor(1, 0, 0, 1)]
-        private void SayHello()
-        {
-            Debug.Log("Hello");
-        }
+        public bool HideButton;
 
-        [ShowIf("ToggleButtons")]
+        public bool DisableButton;
+
+        // Inline Buttons:
+        [InlineButton("OnClick")]
+        public int InlineButton;
+
+        [InlineButton("OnClick")]
+        [InlineButton("OnClick")]
+        public int InlineButtons;
+
+        // Button sizes:
+        [Button(ButtonSizes.Small)]
+        private void DefaultSizedButton() { OnClick(); }
+
+        [Button(ButtonSizes.Medium)]
+        private void MediumSizedButton() { OnClick(); }
+
+        [Button(ButtonSizes.Large)]
+        private void LargeSizedButton() { OnClick(); }
+
+        [Button(ButtonSizes.Gigantic)]
+        private void GiganticSizedButton() { OnClick(); }
+
+        // Button Groups:
+        [ButtonGroup("My Button Group")] //[ButtonGroup("My Button Group 1")] Will also work.
+        private void A() { OnClick(); }
+
+        [ButtonGroup("My Button Group")]
+        private void B() { OnClick(); }
+
+        [ButtonGroup("My Button Group")]
+        private void C() { OnClick(); }
+
+        // Dynamic buttons:
+        [Button, GUIColor(0, 1, 0, 1)]
+        private void ColoredButton() { OnClick(); }
+
         [Button("Custom Button Name")]
-        private void NamedButton()
-        {
-            Debug.Log("Custom Button Name");
-        }
+        private void NamedButton() { OnClick(); }
 
-        [ButtonGroup("My Button Group 1")]
-        private void A()
-        {
-            Debug.Log("Button A was pressed");
-        }
+        [Button("$DynamicLabel")]
+        private void DynamiclyNamedButton() { OnClick(); }
 
-        [ButtonGroup("My Button Group 1")]
-        [ShowIf("ToggleButtons")]
-        [GUIColor(0, 1, 0, 1)]
-        private void B()
-        {
-            Debug.Log("Button B was pressed");
-        }
+        [HideIf("HideButton")] // Or ShowIf
+        [DisableIf("DisableButton")] // Or EnableIf
+        [Button(ButtonSizes.Gigantic), GUIColor(0, 1, 0, 1)]
+        private void ConditionalButton() { OnClick(); }
 
-        [ButtonGroup("My Button Group 1")]
-        private void C()
-        {
-            Debug.Log("Button C was pressed");
-        }
-
-        [ButtonGroup("My Button Group 2")]
-        private void D()
-        {
-            Debug.Log("Button D was pressed");
-        }
-
-        [ButtonGroup("My Button Group 2")]
-        private void E()
-        {
-            Debug.Log("Button E was pressed");
-        }
-
-        [ButtonGroup("My Button Group 2")]
-        private void F()
-        {
-            Debug.Log("Button F was pressed");
-        }
-
-        [ButtonGroup("My Button Group 2")]
-        private void G()
-        {
-            Debug.Log("Button G was pressed");
-        }
-
-		[Title("Inline Buttons")]
-		[PropertyOrder(10)]
-		[InlineButton("Click")]
-		public int InlineButton;
-
-		[PropertyOrder(10)]
-		[InlineButton("Click", "$DynamicLabel")]
-		public string DynamicLabel = "Dynamic label";
-
-		private void Click()
+        // OnClick
+        private void OnClick()
 		{
 			Debug.Log("Click");
 		}

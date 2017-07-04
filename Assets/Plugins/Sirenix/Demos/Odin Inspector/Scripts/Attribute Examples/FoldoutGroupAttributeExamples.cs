@@ -13,13 +13,13 @@
         [FoldoutGroup("Group 1")]
         public int C;
 
-        [FoldoutGroup("Group 2")]
+        [FoldoutGroup("Collapsed group", expanded: false)]
         public int D;
 
-        [FoldoutGroup("Group 2")]
+        [FoldoutGroup("Collapsed group")]
         public int E;
 
-        [FoldoutGroup("$GroupTitle")]
+        [FoldoutGroup("$GroupTitle", expanded: true)]
         public int One;
 
         [FoldoutGroup("$GroupTitle")]

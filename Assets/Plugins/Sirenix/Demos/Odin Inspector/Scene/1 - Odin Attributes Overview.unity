@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultEnumBitmask: 12
-  MyEnumField: 1
-  WideEnumField: 0
+  MyEnumField: 5
+  WideEnumField: 2
   BitmaskEnumField: 0
   BitmaskArray: 0c0000000200000004000000080000000e000000
 --- !u!4 &29335747
@@ -128,7 +128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &57986443
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 18
 --- !u!1 &70616883
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 39
 --- !u!1 &142205026
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 19
 --- !u!1 &198556527
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 20
 --- !u!1 &356546016
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbba12b39d964d0468ce06483e87fdcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObjectWithRenderer1: {fileID: 1419362784}
+  GameObjectWithRenderer1: {fileID: 1409689415}
   GameObjectWithRenderer2: {fileID: 1943253128}
   GameObjectWithRenderer3: {fileID: 1398801816}
   Message: Dynamic ValidateInput message
@@ -348,7 +348,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 36
 --- !u!1 &399639919
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 23
 --- !u!114 &399639921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,7 +444,51 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 16
+--- !u!1 &448236892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 448236894}
+  - 114: {fileID: 448236893}
+  m_Layer: 0
+  m_Name: Title Groups
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &448236893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448236892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3590aff2af9b734ca40b1ebaf9c52b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SomeInt1: 0
+  SomeString1: Some Dynamic String Title
+  SomeVector1: {x: 0, y: 0}
+  SomeInt2: 0
+  SomeString2: 
+--- !u!4 &448236894
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448236892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &474737044
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
 --- !u!1 &483105256
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +585,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 15
 --- !u!1 &515229435
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,63 +614,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatList:
-  - 0.265
-  - 23
+  - 1.02
+  - 103.1
   FloatRangeArray:
-  - 0.186
-  GameObjectList:
-  - {fileID: 175972, guid: db6a4787503068e47afd767d48b73fa8, type: 2}
-  AnimationCurveArray:
-  - serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 10
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 10
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  - 0.518
+  ReadOnlyArray1: 010000000200000003000000
+  ReadOnlyArray2: 010000000200000003000000
+  MoreListSettings: 0000000000000000
+  CustomButtons: 4a0000003c0000005600000032000000
 --- !u!4 &515229437
 Transform:
   m_ObjectHideFlags: 0
@@ -638,7 +633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 12
 --- !u!1 &566933178
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +668,7 @@ MonoBehaviour:
   E: 0
   One: 0
   Two: 0
-  GroupTitle: Dynamic group title
+  GroupTitle: Dynamic Expanded Group
 --- !u!4 &566933180
 Transform:
   m_ObjectHideFlags: 0
@@ -685,7 +680,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
 --- !u!1 &615482320
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
 --- !u!1 &768479960
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +779,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 26
 --- !u!1 &844746228
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +807,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 28
 --- !u!114 &844746230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,10 +853,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3646a5b1140af1c49888d1ba4122935d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Quaternion: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-  Vector3: {x: 0, y: 0, z: -1}
+  Quaternion: {x: 0.008638724, y: 0.707054, z: 0.008638724, w: 0.707054}
+  Vector3: {x: 0, y: 0.74, z: -1}
   Bounds:
-    m_Center: {x: 13.32, y: 3.68, z: 0}
+    m_Center: {x: 26.2, y: 3.68, z: 0}
     m_Extent: {x: 21.1, y: 0, z: 0}
   Rect:
     serializedVersion: 2
@@ -880,7 +875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 43
 --- !u!1 &965927596
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +918,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 41
 --- !u!1 &967040673
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcefa0773d85cf44c8bce14609a897a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsToggled: 0
+  IsToggled: 1
   EnableIfToggled: 0
   EnableIfNotToggled: 0
   DisableIfToggled: 0
@@ -967,7 +962,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 17
 --- !u!1 &1029988704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 1
 --- !u!1 &1242822175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 27
 --- !u!1 &1320776714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1088,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
 --- !u!114 &1320776716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,7 +1195,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 48
 --- !u!1 &1341925126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,7 +1238,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 40
 --- !u!1 &1353610892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,15 +1266,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550eabbd4fcd3334187446f3876d9506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  MyMaterial: {fileID: 0}
-  MyInt: 0
-  Prefab: {fileID: 0}
+  A: 0
+  B: 0
+  C: 0
+  D: 0
+  E: 0
+  F: 0
+  G: 0
+  H: 0
 --- !u!4 &1353610894
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,7 +1285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 44
 --- !u!1 &1396091146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,7 +1353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 2
 --- !u!1 &1398801816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1381,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 30
 --- !u!114 &1398801818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1474,7 +1468,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 25
 --- !u!1 &1419362784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1496,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 31
 --- !u!114 &1419362786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,7 +1556,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &1437723560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 7
 --- !u!1 &1439996093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,48 +1652,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
---- !u!21 &1484253537
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Skybox/Procedural
-  m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _SUNDISK_HIGH_QUALITY
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs: {}
-    m_Floats:
-      data:
-        first:
-          name: _Exposure
-        second: 1.3
-      data:
-        first:
-          name: _SunDisk
-        second: 2
-      data:
-        first:
-          name: _SunSize
-        second: 0.04
-      data:
-        first:
-          name: _AtmosphereThickness
-        second: 1
-    m_Colors:
-      data:
-        first:
-          name: _SkyTint
-        second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-      data:
-        first:
-          name: _GroundColor
-        second: {r: 0.369, g: 0.349, b: 0.341, a: 1}
+  m_RootOrder: 42
 --- !u!1 &1485075118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,7 +1680,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 21
 --- !u!114 &1485075120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,6 +1739,85 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+--- !u!1 &1489174786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1489174787}
+  - 114: {fileID: 1489174789}
+  - 114: {fileID: 1489174788}
+  - 114: {fileID: 1489174790}
+  m_Layer: 0
+  m_Name: Combine Group Attributes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1489174787
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489174786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+--- !u!114 &1489174788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489174786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aecd313d20a05f468bf8d6eedd9f359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: 
+  C: 0
+  B: 
+  D: 0
+  E: 0
+  F: 0
+  G: 000000000000000000000000
+  H: 000000000000000000000000
+  I: 0
+--- !u!114 &1489174789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489174786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be199417a4415044e97cbadfd4078dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: 
+  C: 
+  B: 
+  D: 
+  E: 
+  F: 
+--- !u!114 &1489174790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489174786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72375c1b6b89257468b117b42578f3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: 5.9
 --- !u!1 &1543306732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1858,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 37
 --- !u!1 &1553840646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 24
 --- !u!114 &1553840648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1926,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 22
 --- !u!114 &1632000131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,7 +2131,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 45
 --- !u!1 &1708016860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,7 +2159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 14
 --- !u!114 &1708016862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,9 +2171,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ff4f6421316a04a8f9a3abd6c4fe70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ToggleButtons: 0
+  DynamicLabel: Dynamic label Text
+  HideButton: 0
+  DisableButton: 1
   InlineButton: 0
-  DynamicLabel: Dynamic label
+  InlineButtons: 0
+--- !u!21 &1722584195
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Skybox/Procedural
+  m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _SUNDISK_HIGH_QUALITY
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs: {}
+    m_Floats:
+      data:
+        first:
+          name: _Exposure
+        second: 1.3
+      data:
+        first:
+          name: _SunDisk
+        second: 2
+      data:
+        first:
+          name: _SunSize
+        second: 0.04
+      data:
+        first:
+          name: _AtmosphereThickness
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _SkyTint
+        second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      data:
+        first:
+          name: _GroundColor
+        second: {r: 0.369, g: 0.349, b: 0.341, a: 1}
 --- !u!1 &1736702558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,7 +2258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 47
 --- !u!1 &1793697095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,15 +2288,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameObject: {fileID: 118904, guid: 52e18acf33b6d6b419eb1812973be4b6, type: 2}
   MyTextArea: 
-  ColorArray:
-  - {r: 0.537, g: 0.192, b: 0.153, a: 1}
+  ColorArray1:
   - {r: 1, g: 0.431, b: 0.02, a: 1}
+  - {r: 0.306, g: 0.231, b: 0.114, a: 1}
   - {r: 0.82, g: 0.722, b: 0.318, a: 1}
+  ColorArra2:
+  - {r: 0.89, g: 0.353, b: 0.086, a: 1}
+  - {r: 0.937, g: 0.267, b: 0.094, a: 1}
+  - {r: 1, g: 0.431, b: 0.02, a: 1}
   FloatRange:
   - 0.271
   - 0.431
+  - 0.311
   - 0
-  - 0.518
   - 0.583
   - 0.655
   - 0.234
@@ -2262,7 +2341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 46
 --- !u!1 &1839374579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,7 +2387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 34
 --- !u!1 &1847034565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,7 +2433,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 9
 --- !u!1 &1943253128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2486,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 35
 --- !u!1 &1976956536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,7 +2527,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 38
 --- !u!1 &2023126756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,7 +2556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
-  Material: {fileID: 1484253537}
+  Material: {fileID: 1722584195}
 --- !u!4 &2023126758
 Transform:
   m_ObjectHideFlags: 0
@@ -2489,7 +2568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 32
 --- !u!1 &2069571538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,7 +2610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 33
 --- !u!1 &2076840153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 29
 --- !u!114 &2076840155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2611,103 +2690,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: StringObjectLookup
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Sirenix.OdinInspector.Demos.DictionaryExamples+MyCustomType,
-        Assembly-CSharp-firstpass]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
-      Data: a
-    - Name: 
-      Entry: 7
-      Data: 1|Sirenix.OdinInspector.Demos.DictionaryExamples+MyCustomType, Assembly-CSharp-firstpass
-    - Name: SomeMember
-      Entry: 3
-      Data: 0
-    - Name: SomeRotation
-      Entry: 7
-      Data: UnityEngine.Quaternion, UnityEngine
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: SomePrefab
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
-      Data: b
-    - Name: 
-      Entry: 7
-      Data: 2|Sirenix.OdinInspector.Demos.DictionaryExamples+MyCustomType, Assembly-CSharp-firstpass
-    - Name: SomeMember
-      Entry: 3
-      Data: 0
-    - Name: SomeRotation
-      Entry: 7
-      Data: UnityEngine.Quaternion, UnityEngine
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: SomePrefab
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: StringListDictionary
-      Entry: 6
-      Data: 
     - Name: IntMaterialLookup
       Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[UnityEngine.Material,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[UnityEngine.Material,
         UnityEngine]], mscorlib
     - Name: 
       Entry: 12
@@ -2754,9 +2739,177 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: EnumObjectLookup
+      Entry: 7
+      Data: 1|System.Collections.Generic.Dictionary`2[[Sirenix.OdinInspector.Demos.MyEnum,
+        Assembly-CSharp-firstpass],[Sirenix.OdinInspector.Demos.DictionaryExamples+MyCustomType,
+        Assembly-CSharp-firstpass]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 2|Sirenix.OdinInspector.Demos.DictionaryExamples+MyCustomType, Assembly-CSharp-firstpass
+    - Name: SomeMember
+      Entry: 3
+      Data: 0
+    - Name: SomeRotation
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SomePrefab
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|Sirenix.OdinInspector.Demos.DictionaryExamples+MyCustomType, Assembly-CSharp-firstpass
+    - Name: SomeMember
+      Entry: 3
+      Data: 0
+    - Name: SomeRotation
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SomePrefab
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 4|Sirenix.OdinInspector.Demos.DictionaryExamples+MyCustomType, Assembly-CSharp-firstpass
+    - Name: SomeMember
+      Entry: 3
+      Data: 0
+    - Name: SomeRotation
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SomePrefab
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StringListDictionary
+      Entry: 7
+      Data: 5|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[System.Int32,
+        mscorlib]], mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: a
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: b
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: StringStringDictionary
       Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+      Data: 6|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 12
@@ -2793,7 +2946,7 @@ MonoBehaviour:
       Data: 
     - Name: NotSupportedDictionary
       Entry: 7
-      Data: 5|System.Collections.Generic.Dictionary`2[[UnityEngine.MonoBehaviour,
+      Data: 7|System.Collections.Generic.Dictionary`2[[UnityEngine.MonoBehaviour,
         UnityEngine],[System.Single, mscorlib]], mscorlib
     - Name: 
       Entry: 12
@@ -2815,4 +2968,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 13

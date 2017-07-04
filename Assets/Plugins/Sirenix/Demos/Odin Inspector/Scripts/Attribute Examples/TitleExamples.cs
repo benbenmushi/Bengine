@@ -8,7 +8,7 @@
 		[InfoBox(
 			"The Title attribute has the same purpose as Unity's Header attribute," +
 			"but it also supports properties, and methods." +
-			"\n\nTitle also offers more features such as options for horizontal underline, bold text and text alignment." +
+			"\n\nTitle also offers more features such as subtitles, options for horizontal underline, bold text and text alignment." +
 			"\n\nBoth attributes, with Odin, supports either static strings, or refering to members strings by adding a $ in front.")]
         public string MyTitle = "My Dynamic Title";
         public string MySubtitle = "My Dynamic Subtitle";
