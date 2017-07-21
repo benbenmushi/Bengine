@@ -4,8 +4,8 @@ using UnityEditor;
 using System.Reflection;
 using System.Linq;
 
-[CustomEditor(typeof(UIRectTransformSizeController)), CanEditMultipleObjects]
-public class UIRectTransformSizeControllerEditor : Editor
+[CustomEditor(typeof(UIRectTransformSizeController_old)), CanEditMultipleObjects]
+public class UIRectTransformSizeController_oldEditor : Editor
 {
 
 	private GUIStyle m_headerStyle;

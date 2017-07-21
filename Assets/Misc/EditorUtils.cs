@@ -10,8 +10,7 @@ using UnityEditor.SceneManagement;
 
 public static class EditorUtils
 {
-
-	public static Replica.trackedEvent<ScriptableObject, string> OnScriptableObjectCreatedEvent = new Replica.trackedEvent<ScriptableObject, string>("EditorUtils", "OnScriptableObjectCreatedEvent");
+	public static trackedEvent<ScriptableObject, string> OnScriptableObjectCreatedEvent = new trackedEvent<ScriptableObject, string>("EditorUtils", "OnScriptableObjectCreatedEvent");
 
 	/// <summary>
 	/// Searches the editor script among every created scripts

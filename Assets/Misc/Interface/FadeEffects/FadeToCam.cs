@@ -1,9 +1,4 @@
-﻿using Sirenix.OdinInspector;
-#if UNITY_EDITOR
-using Sirenix.OdinInspector.Editor;
-using Sirenix.Utilities.Editor;
-#endif
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +8,7 @@ public class FadeToCam : MonoBehaviour
 	public bool     enableAtStart = false;
 	[Range(0, 1)]
 	public float intensity = 1;
-	[ValidateInput("IsSolidColorOrSkyBox", "Camera clearFlags must be SolidColor or Skybox", InfoMessageType.Warning)]
+	//[ValidateInput("IsSolidColorOrSkyBox", "Camera clearFlags must be SolidColor or Skybox", InfoMessageType.Warning)]
 	public Camera targetCamera;
 	private RenderTexture cachedTexture;
 	private Camera refCam;

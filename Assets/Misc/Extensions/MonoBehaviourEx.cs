@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using CielaSpike;
 
 public abstract class MonoBehaviourEx : MonoBehaviour
 {
@@ -125,10 +124,6 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 	public Coroutine StartAsyncLoopUnscaled(System.Action<float> action, float duration, System.Action endDlg = null, string trackedName = "asyncLoopCoroutine", bool showDebug = false)
 	{
 		return this.StartTrackedCoroutine(trackedName, asyncLoopUnscaledCoroutine(action, duration, endDlg), showDebug);
-	}
-	protected void ExecuteOutsideMainThread(System.Action toDo, System.Action endDlg = null)
-	{
-		this.StartCoroutineAsync(ExecuteOutsideMainThreadCoroutine(toDo, endDlg));
 	}
 
 	// Extra coroutine controls
@@ -285,14 +280,6 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 			if (endDlg != null)
 				endDlg();
 		}
-	}
-	IEnumerator ExecuteOutsideMainThreadCoroutine(System.Action toDo, System.Action endDlg)
-	{
-		yield return Ninja.JumpBack;
-		toDo();
-		yield return Ninja.JumpToUnity;
-		if (endDlg != null)
-			endDlg();
 	}
 	#endregion
 }

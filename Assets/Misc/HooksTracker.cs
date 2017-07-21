@@ -84,8 +84,8 @@ public class HooksTracker
 
 	void OnGUI()
 	{
-		Replica.trackedEventUtility.logInvokeEventCalls = EditorGUILayout.Toggle("logInvokeEventCalls", Replica.trackedEventUtility.logInvokeEventCalls);
-		Replica.trackedEventUtility.logRegistrationErrors = EditorGUILayout.Toggle("logRegistrationErrors", Replica.trackedEventUtility.logRegistrationErrors);
+		trackedEventUtility.logInvokeEventCalls = EditorGUILayout.Toggle("logInvokeEventCalls", trackedEventUtility.logInvokeEventCalls);
+		trackedEventUtility.logRegistrationErrors = EditorGUILayout.Toggle("logRegistrationErrors", trackedEventUtility.logRegistrationErrors);
 		if (TrackedHooks != null)
 		{
 			foreach (KeyValuePair<string, HookableClass> hClass in TrackedHooks)
