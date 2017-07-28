@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Collections.Generic;
+using Sirenix.OdinInspector;
 
-public abstract class MonoBehaviourEx : MonoBehaviour
+public class MonoBehaviourEx : SerializedMonoBehaviour
 {
 	/// <summary>
 	/// Module color in logs
@@ -94,39 +97,25 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 #endif
 	}
 
-	public void StopAllTrackedCoroutines()
+	public Coroutine DelayedAction(Action action, float delay, string trackedName = "delayedActionCoroutine")
 	{
-		CoroutineTracker.StopAllCoroutines(this);
+		return StartCoroutine(delayedActionCoroutine(action, delay));
 	}
-	new public void StopAllCoroutines()
+	public Coroutine DelayedAction(Action action, IEnumerator routine, string trackedName = "delayedActionCoroutine")
 	{
-		base.StopAllCoroutines();
-		CoroutineTracker.StopAllCoroutines(this);
+		return StartCoroutine(delayedActionCoroutine(action, routine));
 	}
-
-	// Coroutine utilities
-	public Coroutine StartTrackedCoroutine(string c, string name, IEnumerator routine)
+	public Coroutine StartAsyncLoop(Action<float> action, float duration, Action endDlg = null, string trackedName = "asyncLoopCoroutine", bool showDebug = false)
 	{
-		return CoroutineTracker.StartCoroutine(c + '.' + name, this, routine);
+		return StartCoroutine(asyncLoopCoroutine(action, duration, endDlg));
 	}
-	public Coroutine StartTrackedCoroutine(string name, IEnumerator routine, bool showDebug = false)
+	public Coroutine StartAsyncLoopUnscaled(Action<float> action, float duration, Action endDlg = null, string trackedName = "asyncLoopCoroutine", bool showDebug = false)
 	{
-		return CoroutineTracker.StartCoroutine(this.GetType().Name + '.' + name, this, routine, showDebug);
-	}
-	public Coroutine DelayedAction(System.Action action, float delay, string trackedName = "delayedActionCoroutine")
-	{
-		return this.StartTrackedCoroutine(trackedName, delayedActionCoroutine(action, delay));
-	}
-	public Coroutine StartAsyncLoop(System.Action<float> action, float duration, System.Action endDlg = null, string trackedName = "asyncLoopCoroutine", bool showDebug = false)
-	{
-		return StartTrackedCoroutine(trackedName, asyncLoopCoroutine(action, duration, endDlg), showDebug);
-	}
-	public Coroutine StartAsyncLoopUnscaled(System.Action<float> action, float duration, System.Action endDlg = null, string trackedName = "asyncLoopCoroutine", bool showDebug = false)
-	{
-		return this.StartTrackedCoroutine(trackedName, asyncLoopUnscaledCoroutine(action, duration, endDlg), showDebug);
+		return this.StartCoroutine(asyncLoopUnscaledCoroutine(action, duration, endDlg));
 	}
 
 	// Extra coroutine controls
+
 	/// <summary>
 	/// Interrupt any async loop started before now (allow you to start another)
 	/// </summary>
@@ -142,15 +131,16 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 	{
 		m_nowAsyncLoopExpirationTime = Time.time;
 	}
-	/// <summary>
+	/// <summary> 
 	/// Interrupt all async loop started and execute the last frame.
 	/// </summary>
 	public void ForceEndAsyncLoops()
 	{
 		m_endAsyncLoopTime = Time.time;
-	}/// <summary>
-	 /// Interrupt any async loop started before now (allow you to start another)
-	 /// </summary>
+	}
+	/// <summary> 
+	/// Interrupt any async loop started before now (allow you to start another) 
+	/// </summary>
 	protected void InterruptLastAsyncLoopsUnscaled()
 	{
 		m_lastAsyncLoopExpirationUnscaledTime = Time.unscaledTime;
@@ -223,7 +213,37 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 	{
 		return startTime < m_forceExcecutionAllDelayedActionTime;
 	}
-	IEnumerator delayedActionCoroutine(System.Action action, float delay)
+
+	Dictionary<int, int>            leftForID = new Dictionary<int, int>();
+
+	IEnumerator delayedActionCoroutine(Action action, IEnumerator delayRoutine)
+	{
+		if (action != null)
+		{
+			float startTime = Time.time;
+			float currentTime = 0;
+			int localID = leftForID.Count;
+
+			leftForID.Add(localID, 1);
+			StartCoroutine(WrappedCall(delayRoutine, localID));
+			while (leftForID[localID] > 0 && !isDelayedActionStoped(startTime) && !shouldForceExecuteDelayedAction(startTime))
+			{
+				yield return null;
+				while (pauseCoroutines)
+					yield return null;
+				currentTime += Time.deltaTime;
+			}
+			if (!isDelayedActionStoped(startTime))
+				action();
+			leftForID.Remove(localID);
+		}
+	}
+	private IEnumerator WrappedCall(IEnumerator routine, int callID)
+	{
+		yield return StartCoroutine(routine);
+		leftForID[callID] -= 1;
+	}
+	IEnumerator delayedActionCoroutine(Action action, float delay)
 	{
 		if (action != null)
 		{
@@ -241,7 +261,7 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 				action();
 		}
 	}
-	IEnumerator asyncLoopCoroutine(System.Action<float> action, float duration, System.Action endDlg = null)
+	IEnumerator asyncLoopCoroutine(Action<float> action, float duration, Action endDlg = null)
 	{
 		float currentTime = 0;
 		float startTime = Time.time;
@@ -261,7 +281,7 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 				endDlg();
 		}
 	}
-	IEnumerator asyncLoopUnscaledCoroutine(System.Action<float> action, float duration, System.Action endDlg = null)
+	IEnumerator asyncLoopUnscaledCoroutine(Action<float> action, float duration, Action endDlg = null)
 	{
 		float currentTime = 0;
 		float startTime = Time.unscaledTime;
@@ -280,6 +300,48 @@ public abstract class MonoBehaviourEx : MonoBehaviour
 			if (endDlg != null)
 				endDlg();
 		}
+	}
+	#endregion
+
+	#region STATIC COROUTINES
+
+	static MonoBehaviourEx m_coroutineWizard;
+	static MonoBehaviourEx coroutineWizard
+	{
+		get
+		{
+			if (m_coroutineWizard == null)
+			{
+				GameObject wizard = new GameObject("CoroutineWizard", typeof(MonoBehaviourEx));
+
+				m_coroutineWizard = wizard.GetComponent<MonoBehaviourEx>();
+				m_coroutineWizard.hideFlags = HideFlags.HideAndDontSave;
+				DontDestroyOnLoad(m_coroutineWizard);
+			}
+			return m_coroutineWizard;
+		}
+	}
+
+	public static Coroutine DelayedActionStatic(Action action, float delay, string trackedName = "delayedActionCoroutine")
+	{
+		return coroutineWizard.DelayedAction(action, delay, trackedName);
+	}
+	public static Coroutine DelayedActionStatic(Action action, IEnumerator delayRoutine, string trackedName = "delayedActionCoroutine")
+	{
+		return coroutineWizard.StartCoroutine(coroutineWizard.delayedActionCoroutine(action, delayRoutine));
+	}
+	public static CoroutineEx StartCoroutineStatic(IEnumerator routine)
+	{
+		return new CoroutineEx(coroutineWizard, routine);
+	}
+	public static CoroutineEx WaitWhile(Func<bool> isTrueCallback)
+	{
+		return new CoroutineEx(coroutineWizard, _WaitWhile(isTrueCallback));
+	}
+	private static IEnumerator _WaitWhile(Func<bool> isTrueCallback)
+	{
+		while (isTrueCallback())
+			yield return null;
 	}
 	#endregion
 }

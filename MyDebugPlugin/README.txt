@@ -1,0 +1,1 @@
+A small Debug plugin giving to Unity a window containing multiples Log Type allowing the user to set the log level of each of these LogType.

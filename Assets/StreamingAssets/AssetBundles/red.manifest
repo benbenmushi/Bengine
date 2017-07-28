@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 2671824159
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d752a7e7cd810ed9354a5677ecde010c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e5f9c1b91db229328ac4acb8cc6ad03f
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3b5beea953d01524abe8fe1980cdf94b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/TestImages/Red/red0.jpg
+- Assets/TestImages/Red/BundleContent.asset
+- Assets/TestImages/Red/red1.jpg
+- Assets/TestImages/Red/red2.png
+Dependencies:
+- D:/Other/Perso/DEV/Bengine/Assets/AssetBundles/blue
+- D:/Other/Perso/DEV/Bengine/Assets/AssetBundles/yellow
